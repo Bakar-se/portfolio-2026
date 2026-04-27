@@ -1,4 +1,13 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Blog,
+  Contact,
+  Gallery,
+  Home,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -6,16 +15,22 @@ const person: Person = {
   lastName: "Abu Bakar",
   name: `Muhammad Abu Bakar`,
   role: "Lead Software Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/pfp.jpeg",
   email: "ironsamurai786@gmail.com",
   location: "Asia/Karachi", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English"], // optional: Leave the array empty if you don't want to display languages
 };
 
-const newsletter: Newsletter = {
+const contact: Contact = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>Get in touch</>,
+  description: <>Send a message and I will reply by email.</>,
+  labels: {
+    name: "Name",
+    email: "Email",
+    description: "Description",
+  },
+  submit: "Send message",
 };
 
 const social: Social = [
@@ -107,9 +122,10 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        {person.name} is a Pakistan-based {person.role.toLowerCase()} focused on turning complex
-        problems into clear, maintainable software—from APIs and full-stack systems to polished
-        product interfaces where engineering meets thoughtful design.
+        {person.name} is a Pakistan-based {person.role.toLowerCase()} focused on
+        turning complex problems into clear, maintainable software—from APIs and
+        full-stack systems to polished product interfaces where engineering
+        meets thoughtful design.
       </>
     ),
   },
@@ -123,12 +139,12 @@ const about: About = {
         role: "Lead Software Engineer",
         achievements: [
           <>
-            Architected and scaled a microservices-based online tutoring SaaS on AWS using SST
-            (IaC), focusing on high availability and performance.
+            Architected and scaled a microservices-based online tutoring SaaS on
+            AWS using SST (IaC), focusing on high availability and performance.
           </>,
           <>
-            Improved backend efficiency and reliability through database optimization, service tuning,
-            and CI/CD automation.
+            Improved backend efficiency and reliability through database
+            optimization, service tuning, and CI/CD automation.
           </>,
         ],
         images: [
@@ -146,12 +162,12 @@ const about: About = {
         role: "Senior Software Engineer",
         achievements: [
           <>
-            Led development of scalable POS systems, SaaS platforms, and AI-driven products serving
-            high-traffic users.
+            Led development of scalable POS systems, SaaS platforms, and
+            AI-driven products serving high-traffic users.
           </>,
           <>
-            Reduced API latency by 30% and mentored developers while enforcing clean
-            architecture and engineering best practices.
+            Reduced API latency by 30% and mentored developers while enforcing
+            clean architecture and engineering best practices.
           </>,
         ],
         images: [],
@@ -162,12 +178,12 @@ const about: About = {
         role: "Full Stack Software Engineer",
         achievements: [
           <>
-            Built scalable dashboards and CRM platforms using React, Next.js, Node.js, and
-            MongoDB.
+            Built scalable dashboards and CRM platforms using React, Next.js,
+            Node.js, and MongoDB.
           </>,
           <>
-            Improved performance and maintainability through component optimization and close
-            collaboration across teams.
+            Improved performance and maintainability through component
+            optimization and close collaboration across teams.
           </>,
         ],
         images: [],
@@ -178,8 +194,8 @@ const about: About = {
         role: "Junior Unity Game Developer",
         achievements: [
           <>
-            Developed and optimized Unity-based game features, improving gameplay performance and
-            stability.
+            Developed and optimized Unity-based game features, improving
+            gameplay performance and stability.
           </>,
         ],
         images: [],
@@ -190,8 +206,8 @@ const about: About = {
         role: "Front-end React Developer",
         achievements: [
           <>
-            Built responsive React components and integrated APIs to deliver production-ready user
-            interfaces.
+            Built responsive React components and integrated APIs to deliver
+            production-ready user interfaces.
           </>,
         ],
         images: [],
@@ -206,9 +222,10 @@ const about: About = {
         name: "University of Gujrat",
         description: (
           <>
-            BS in Software Engineering (GPA: 3.08 / 4.00), 2018–2022 — Gujrat, Punjab. Coursework
-            included data structures &amp; algorithms, OOP, database systems, operating systems,
-            computer networks, software engineering, web engineering, and software design &amp;
+            BS in Software Engineering (GPA: 3.08 / 4.00), 2018–2022 — Gujrat,
+            Punjab. Coursework included data structures &amp; algorithms, OOP,
+            database systems, operating systems, computer networks, software
+            engineering, web engineering, and software design &amp;
             architecture.
           </>
         ),
@@ -223,9 +240,10 @@ const about: About = {
         title: "Programming & frameworks",
         description: (
           <>
-            Day-to-day stack for ES6+ JavaScript and TypeScript, Python where it fits, and Node
-            services—React and Next.js on the front, Express and NestJS on the back, with clean
-            architecture and pragmatic system design.
+            Day-to-day stack for ES6+ JavaScript and TypeScript, Python where it
+            fits, and Node services—React and Next.js on the front, Express and
+            NestJS on the back, with clean architecture and pragmatic system
+            design.
           </>
         ),
         tags: [
@@ -257,9 +275,10 @@ const about: About = {
         title: "Cloud, data & AI",
         description: (
           <>
-            MongoDB and PostgreSQL in production, AWS with Docker, SST, and IaC-style workflows,
-            CI/CD, REST and JWT/OAuth, microservices—and agent tooling with LangChain, LangGraph,
-            and models via OpenAI, OpenRouter, Claude, Gemini, and Ollama.
+            MongoDB and PostgreSQL in production, AWS with Docker, SST, and
+            IaC-style workflows, CI/CD, REST and JWT/OAuth, microservices—and
+            agent tooling with LangChain, LangGraph, and models via OpenAI,
+            OpenRouter, Claude, Gemini, and Ollama.
           </>
         ),
         tags: [
@@ -354,4 +373,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, contact, home, about, blog, work, gallery };

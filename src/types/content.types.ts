@@ -30,16 +30,24 @@ export type Person = {
 };
 
 /**
- * Newsletter Section
- * @description The below information will be displayed on the Home page in Newsletter block
+ * Contact form section (e.g. home, blog).
+ * Renders a form with name, email, and description; submissions go to `POST /api/contact`.
  */
-export type Newsletter = {
-  /** Whether to display the newsletter section */
+export type Contact = {
+  /** Whether to display the contact section */
   display: boolean;
-  /** Title of the newsletter   */
+  /** Section heading */
   title: React.ReactNode;
-  /** Description of the newsletter */
+  /** Intro copy above the form */
   description: React.ReactNode;
+  /** Labels for the name, email, and description fields */
+  labels: {
+    name: string;
+    email: string;
+    description: string;
+  };
+  /** Primary submit button label */
+  submit: string;
 };
 
 /**
